@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Press Start 2P", system-ui;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-retro-green: #00ff41;
+  --color-retro-dark: #0a0a0a;
+  --color-retro-gray: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-retro-dark text-white font-mono;
+  }
+  
+  h1, h2, h3, .pixel-font {
+    @apply font-pixel;
+  }
+}
+
+/* Custom scrollbar for the retro vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-retro-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-retro-green/20 border border-retro-green/50;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-retro-green/40;
+}
